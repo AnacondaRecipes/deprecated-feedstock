@@ -19,6 +19,8 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - wheel
     - wrapt >=1.10,<2
   run:
     - python
