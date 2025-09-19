@@ -38,15 +38,14 @@ test:
     - pytest
 
 about:
-  home: https://github.com/tantale/deprecated
+  home: https://github.com/laurent-laporte-pro/deprecated
   summary: Python @deprecated decorator to deprecate old python classes, functions or methods.
   license: MIT
   license_file: LICENSE.rst
   license_family: MIT
-  license_file: LICENSE.rst
   description: |
     If you need to mark a function or a method as deprecated, you can use the @deprecated decorator
-  dev_url: https://github.com/tantale/deprecated
+  dev_url: https://github.com/laurent-laporte-pro/deprecated
   doc_url: https://readthedocs.org/projects/deprecated
 
 extra:
