@@ -1,19 +1,18 @@
-{% set name = "Deprecated" %}
-{% set version = "1.2.13" %}
+{% set name = "deprecated" %}
+{% set version = "1.2.18" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 43ac5335da90c31c24ba028af536a91d41d53f9e6901ddb021bcc572ce44e38d
-  skip: True  # [py<27]
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install --ignore-installed --no-deps .
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<27]
 
 requirements:
   host:
@@ -27,18 +26,27 @@ requirements:
     - wrapt >=1.10,<2
 
 test:
+  source_files:
+    - tests
   imports:
     - deprecated
+  commands:
+    - pip check
+    - pytest -v tests
+  requires:
+    - pip
+    - pytest
 
 about:
-  home: https://github.com/tantale/deprecated
+  home: https://github.com/laurent-laporte-pro/deprecated
+  summary: Python @deprecated decorator to deprecate old python classes, functions or methods.
   license: MIT
   license_file: LICENSE.rst
   license_family: MIT
-  # https://github.com/tantale/deprecated/pull/1
-  # license_file: ''
-  summary: Python @deprecated decorator to deprecate old python classes, functions or methods.
-  dev_url: https://github.com/tantale/deprecated
+  description: |
+    If you need to mark a function or a method as deprecated, you can use the @deprecated decorator
+  dev_url: https://github.com/laurent-laporte-pro/deprecated
+  doc_url: https://readthedocs.org/projects/deprecated
 
 extra:
   recipe-maintainers:
