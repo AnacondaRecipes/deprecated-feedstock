@@ -20,22 +20,21 @@ requirements:
     - pip
     - setuptools
     - wheel
-    - wrapt >=1.10,<2
   run:
     - python
-    - wrapt >=1.10,<2
+    - wrapt >=1.10,<3
 
 test:
   source_files:
     - tests
   imports:
     - deprecated
-  commands:
-    - pip check
-    - pytest -v tests
   requires:
     - pip
     - pytest
+  commands:
+    - pip check
+    - pytest -v tests
 
 about:
   home: https://github.com/laurent-laporte-pro/deprecated
