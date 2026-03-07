@@ -45,7 +45,7 @@ about:
   description: |
     If you need to mark a function or a method as deprecated, you can use the @deprecated decorator
   dev_url: https://github.com/laurent-laporte-pro/deprecated
-  doc_url: https://readthedocs.org/projects/deprecated
+  doc_url: https://app.readthedocs.org/projects/deprecated
 
 extra:
   recipe-maintainers:
