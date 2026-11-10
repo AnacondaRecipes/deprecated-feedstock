@@ -33,7 +33,7 @@ test:
     - pytest
   commands:
     - pip check
-    - pytest -v tests
+    - pytest -vv tests
 
 about:
   home: https://github.com/laurent-laporte-pro/deprecated
